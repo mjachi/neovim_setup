@@ -1,8 +1,6 @@
-
 -------------------
 -- Plugin Config --
 -------------------
-
 local fn = vim.fn
 
 -- Automatically install packer
@@ -20,7 +18,7 @@ if fn.empty(fn.glob(install_path)) > 0 then
   vim.cmd [[packadd packer.nvim]]
 end
 
--- Autocommand that reloads neovim whenever you save the plugins.lua file
+-- Reloads neovim this plugins.lua file is saved
 vim.cmd [[
   augroup packer_user_config
     autocmd!
@@ -28,13 +26,12 @@ vim.cmd [[
   augroup end
 ]]
 
--- Use a protected call so we don't error out on first use
 local status_ok, packer = pcall(require, "packer")
 if not status_ok then
   return
 end
 
--- Have packer use a popup window
+-- Packer things here and below
 packer.init {
   display = {
     open_fn = function()
@@ -45,8 +42,6 @@ packer.init {
 
 -- Install your plugins here
 return packer.startup(function(use)
-
--- My plugins
 
 -- Nvim Tree File Explorer
   use {
@@ -73,9 +68,8 @@ return packer.startup(function(use)
   use "L3MON4D3/LuaSnip"                   -- LuaSnip (requird by nvim-cmp)
   use "lewis6991/impatient.nvim"           -- Speed up loading Lua modules to improve startup time.
   use "karb94/neoscroll.nvim"              -- Smooth Scrolling
-  -- use "dstein64/vim-startuptime"           -- A Vim plugin for profiling Vim's startup time.
   use "lukas-reineke/indent-blankline.nvim"
-  use "lervag/vimtex" -- LATEX !!!!
+  use "lervag/vimtex" -- LATEX
 
 -- Automatically set up your configuration after cloning packer.nvim
 -- Put this at the end after all plugins

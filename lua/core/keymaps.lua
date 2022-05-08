@@ -9,7 +9,7 @@ local opts = { noremap = true, silent = true }
 local term_opts = { silent = true }
 
 -- Remap space as leader key
-keymap("", "<TAB>", "<Nop>", {})
+keymap("", "<SPACE>", "<Nop>", {})
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
@@ -32,10 +32,6 @@ keymap ("n", "<A-l>", ":vertical resize +5<cr>", {})
 keymap ("n", "<leader>k", "<C-u>k", {})
 keymap ("n", "<leader>j", "<C-d>j", {})
 
--- TAB SHIFT-TAB will go back
--- keymap("n", "<TAB>", ":bnext<CR>", {})
--- keymap("n", "<S-TAB>", ":bprevious<CR>", {})
-
 -- Alternate way to save and quit nvim
 keymap ("n", "<A-w>", ":w<CR>", {})
 keymap ("n", "<A-q>", ":q<CR>", {})
@@ -43,7 +39,7 @@ keymap ("n", "<A-1>", ":q!<CR>",{})
 
 -- Nvim Comment
 keymap("n", "<leader>c", ":CommentToggle<CR>", {})       -- Comment One Line
-keymap("x", "<leader>c", ":CommentToggle<CR>", {})  -- Comment Multiple Lines In Visual Mode
+keymap("x", "<leader>c", ":CommentToggle<CR>", {})       -- Comment Multiple Lines In Visual Mode
 keymap("n", "<leader>p", "vip:CommentToggle<CR>", {})    -- Comment A Paragraph
 
 -- Better tabbing
