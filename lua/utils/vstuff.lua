@@ -65,6 +65,3 @@ vim.cmd [[silent! set updatetime=300 timeout timeoutlen=500 ttimeout ttimeoutlen
 
 -- Disbale Word And Line Count
 vim.api.nvim_exec([[ autocmd VimEnter * set noru]], false)
-
--- Disbale Status Line
--- vim.api.nvim_exec([[ autocmd VimEnter * set laststatus=3]], false)
