@@ -2,15 +2,15 @@
 local core_modules = {
 
 ---- Core Settings --------------------------------
- "core/plugins",           -- Plugins + Packer Conf
- "core/keymaps",           -- Custom Mappings
- "core/options",           -- General Settings
+  "core/plugins",
+  "core/options",
 
 ---- Plugin Configurations ------------------------
---"configs/..."
+  "configs/colorscheme",
+  "configs/treesitter",
+  "configs/cmp",
 
 ---- Utilities ------------------------------------
- "utils/vstuff",           -- Other Stuff
 
 }
 
