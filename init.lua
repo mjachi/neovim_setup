@@ -1,34 +1,23 @@
-
---[[---------------------------------------------]]--
---         init.lua - Init file of LuaVim          --
---                  Author: Elai                   --
---                 License: GPLv3                  --
---[[---------------------------------------------]]--
-
 local core_modules = {
-
 ---- Core Settings ----------------------------------
- "core/plugins",           -- Plugins + Packer Config
- "core/keymaps",           -- Custom Mappings
- "core/options",           -- General Settings
-
+ "core/plugins",
+ "core/keymaps",
+ "core/options",
 ---- Plugin Configurations --------------------------
- "configs/impatient",      -- Improve Startup Time
- "configs/colorshemes",    -- All Colorshemes
- "configs/treesitter",     -- Syntax Highlighting
- "configs/completion",     -- Auto Completion
- "configs/alpha-nvim",     -- Wellcome Screen
- "configs/nvim-tree",      -- File Explorer
- "configs/gitsigns",       -- Git integration
- "configs/commentary",     -- Easily Comment Lines
- "configs/statusline",     -- Status Line
- "configs/colorizer",      -- Colors Highlighter
- "configs/smooth-scrl",    -- Smooth Scrolling
- "configs/toggleterm",     -- Floating Terminal
-
+ "configs/impatient",
+ "configs/colorscheme",
+ "configs/treesitter",
+ "configs/completion",
+ "configs/alpha-nvim",
+ "configs/nvim-tree",
+ "configs/gitsigns",
+ "configs/commentary",
+ "configs/statusline",
+ "configs/colorizer",
+ "configs/smooth-scrl",
+ "configs/toggleterm",
 ---- Other Utilities --------------------------------
- "utils/vstuff",           -- Other Stuff
-
+ "utils/vstuff",
 }
 -- Using pcall we can handle better any loading issues
 for _, module in ipairs(core_modules) do

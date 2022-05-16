@@ -12,22 +12,6 @@
 
 local lualine = require('lualine')
 
--- Color table for highlights
--- stylua: ignore
-local colors = {
-  bg       = '#0c1014',
-  fg       = '#bbc2cf',
-  yellow   = '#ECBE7B',
-  cyan     = '#008080',
-  darkblue = '#081633',
-  green    = '#B7BD82',
-  orange   = '#8d6141',
-  violet   = '#B294BB',
-  magenta  = '#AE84BB',
-  blue     = '#81A2BE',
-  red      = '#CC8282',
-}
-
 local conditions = {
   buffer_not_empty = function()
     return vim.fn.empty(vim.fn.expand('%:t')) ~= 1
@@ -48,13 +32,7 @@ local config = {
     -- Disable sections and component separators
     component_separators = '',
     section_separators = '',
-    theme = {
-      -- We are going to use lualine_c an lualine_x as left and
-      -- right section. Both are highlighted by c theme .  So we
-      -- are just setting default looks o statusline
-      normal = { c = { fg = colors.fg, bg = colors.bg } },
-      inactive = { c = { fg = colors.fg, bg = colors.bg } },
-    },
+    theme = "nord"
   },
 
 -- These are to remove the defaults
@@ -136,12 +114,9 @@ ins_left {
 -- File Name
 ins_left {
   'filename',
-   file_status = true,                             -- Displays file status (readonly status, modified status)
-   path = 2,                                       -- 0: Just the filename
-                                                   -- 1: Relative path
-                                                   -- 2: Absolute path
-shorting_target = 0,                               -- Shortens path to leave 40 spaces in the window
-                                                   -- for other components. (terrible name, any suggestions?)
+   file_status = true,
+   path = 2,
+shorting_target = 0,
 symbols = {
   modified = '  ',                                -- Text to show when the file is modified.
   readonly = ' ',                                 -- Text to show when the file is non-modifiable or readonly.

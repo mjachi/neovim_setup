@@ -1,10 +1,3 @@
-
---[[-------------------------------------]]--
---        nvim_tree - file explorer        --
---               Author: Elai              --
---              License: GPLv3             --
---[[-------------------------------------]]--
-
 local status_ok, nvim_tree = pcall(require, "nvim-tree")
 if not status_ok then
   return
@@ -17,8 +10,6 @@ end
 
 local tree_cb = nvim_tree_config.nvim_tree_callback
 
--- following options are the default
--- each of these are documented in `:help nvim-tree.OPTION_NAME`
 vim.g.nvim_tree_icons = {
   default = "",
   symlink = "",
@@ -57,7 +48,6 @@ nvim_tree.setup {
      auto_open = true,
   },
 
-   -- auto_close = false,
   open_on_tab = false,
   hijack_cursor = false,
   update_cwd = true,
