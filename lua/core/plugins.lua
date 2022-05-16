@@ -50,13 +50,13 @@ return packer.startup(function(use)
   use "wbthomason/packer.nvim"
   -- See e.g. :WakaTimeApiKey to set if it doesn't do auto.
   use "wakatime/vim-wakatime"
+  use "kyazdani42/nvim-web-devicons"
+  use "lewis6991/impatient.nvim"
 
   -- Colorschemes
   use "shaunsingh/nord.nvim"
   -- https://github.com/sainnhe/everforest
   -- also morhetz/gruvbox
-  use "nvim-treesitter/nvim-treesitter"
-  use "kyazdani42/nvim-web-devicons"
 
   use {"neovim/nvim-lspconfig",
     requires = { 'williamboman/nvim-lsp-installer' },
@@ -67,9 +67,26 @@ return packer.startup(function(use)
   use "hrsh7th/cmp-path"
   use "hrsh7th/cmp-cmdline"
   use "hrsh7th/nvim-cmp"
+  use "L3MON4D3/Luasnip"
+  use "nvim-treesitter/nvim-treesitter"
+  use "terrortylor/nvim-comment"
 
-  --use "goolord/alpha-nvim"
-  --use "terrortylor/nvim-comment"
+  use "goolord/alpha-nvim"
+  use {
+    'kyazdani42/nvim-tree.lua',
+    cmd = {'NvimTreeToggle', 'NvimTreeOpen'},
+    config = function()
+    require('nvim-tree').setup {
+      update_focused_file = {enable = true, update_cwd = true}
+    }
+    end
+  }
+  use "nvim-lualine/lualine.nvim"
+  use "norcalli/nvim-colorizer.lua"
+
+  use "karb94/neoscroll.nvim"
+  use "lukas-reineke/indent-blankline.nvim"
+  
 
   if PACKER_BOOTSTRAP then
     require("packer").sync()

@@ -55,4 +55,54 @@ set.lazyredraw = true
 set.synmaxcol = 240
 set.updatetime = 700
 
+-- Ignore erroneous Latex files
+set.wildignore = {
+  "*.aux",
+  "*.lof",
+  "*.lot",
+  "*.fls",
+  "*.out",
+  "*.toc",
+  "*.fmt",
+  "*.fot",
+  "*.cb",
+  "*.cb2",
+  ".*.lb",
+  "__latex*",
+  "*.fdb_latexmk",
+  "*.synctex",
+  "*.synctex(busy)",
+  "*.synctex.gz",
+  "*.synctex.gz(busy)",
+  "*.pdfsync",
+  "*.bbl",
+  "*.bcf",
+  "*.blg",
+  "*.run.xml",
+  "indent.log",
+  "*.pdf",
+}
 
+local disabled_built_ins = {
+  "netrw",
+  "netrwPlugin",
+  "netrwSettings",
+  "netrwFileHandlers",
+  "gzip",
+  "zip",
+  "zipPlugin",
+  "tar",
+  "tarPlugin",
+  "getscript",
+  "getscriptPlugin",
+  "vimball",
+  "vimballPlugin",
+  "2html_plugin",
+  "logipat",
+  "rrhelper",
+  "matchit",
+}
+
+for _, plugin in pairs(disabled_built_ins) do
+    vim.g["loaded_" .. plugin] = 1
+end
