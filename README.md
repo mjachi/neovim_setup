@@ -1,11 +1,7 @@
-TODO -- more latex, julia, more C, more python. Snippets >>>>>>>
-TODO -- luasnips get a bunch; test out 
+TODO -- julia, latex, rust, C++, C, python snippets
+
+TODO -- Makefile/ Cmake?
+
+TODO -- luasnips
+
 TODO -- solidity
-
-
-
-Language servers required:
-
-https://github.com/latex-lsp/texlab
-
-

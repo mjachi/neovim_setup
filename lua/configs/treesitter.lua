@@ -1,21 +1,26 @@
-local status_ok, nts = pcall(require, 'nvim-treesitter.configs')
+
+--[[---------------------------------------]]--
+--      treesitter - syntax highlighting     --
+--               Author: Elai                --
+--              License: GPLv3               --
+--[[---------------------------------------]]--
+
+local status_ok, nvim_treesitter = pcall(require, 'nvim-treesitter.configs')
 if not status_ok then
   return
 end
 
-nts.setup {
-  ensure_installed = "all",
-  sync_install = true,
+-- See: https://github.com/nvim-treesitter/nvim-treesitter#quickstart
+nvim_treesitter.setup {
+  -- A list of parser names, or "all"
+  ensure_installed = {
+    'bash', 'c', 'cpp','lua','python','vim'
+    -- 'bash', 'c', 'cpp','json','lua','python','typescript','vim'
+  },
+  -- Install parsers synchronously (only applied to `ensure_installed`)
+  sync_install = false,
   highlight = {
+    -- `false` will disable the whole extension
     enable = true,
-    additional_vim_regex_highlighting = true,
-  }
-}
-
-vim.opt.list = true
-
-require ("indent_blankline").setup {
-  space_char_blankline = " ",
-  show_current_context = true,
-  show_current_context_start = true,
+  },
 }

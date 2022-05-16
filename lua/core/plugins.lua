@@ -1,8 +1,13 @@
+
+--[[--------------------------------------]]--
+--     plugins + packer - configuration     --
+--              Author: Elai                --
+--             License: GPLv3               --
+--[[--------------------------------------]]--
+
 local fn = vim.fn
 
-----------------------------------
--- Automatically install packer --
-----------------------------------
+-- Automatically install packer
 local install_path = fn.stdpath "data" .. "/site/pack/packer/start/packer.nvim"
 if fn.empty(fn.glob(install_path)) > 0 then
   PACKER_BOOTSTRAP = fn.system {
@@ -17,10 +22,7 @@ if fn.empty(fn.glob(install_path)) > 0 then
   vim.cmd [[packadd packer.nvim]]
 end
 
--------------------------------
--- Auto-reload nvim whenever --
--- this file is saved.       --
--------------------------------
+-- Autocommand that reloads neovim whenever you save the plugins.lua file
 vim.cmd [[
   augroup packer_user_config
     autocmd!
@@ -28,66 +30,64 @@ vim.cmd [[
   augroup end
 ]]
 
+-- Use a protected call so we don't error out on first use
 local status_ok, packer = pcall(require, "packer")
 if not status_ok then
   return
 end
 
+-- Have packer use a popup window
 packer.init {
   display = {
     open_fn = function()
       return require("packer.util").float { border = "rounded" }
-    end
+    end,
   },
 }
 
-----------------------------
--- Install packages below --
-----------------------------
-
+-- Install your plugins here
 return packer.startup(function(use)
 
-  use "wbthomason/packer.nvim"
-  -- See e.g. :WakaTimeApiKey to set if it doesn't do auto.
-  use "wakatime/vim-wakatime"
-  use "kyazdani42/nvim-web-devicons"
-  use "lewis6991/impatient.nvim"
+-- My plugins
 
-  -- Colorschemes
-  use "shaunsingh/nord.nvim"
-  -- https://github.com/sainnhe/everforest
-  -- also morhetz/gruvbox
+-- Nvim Tree File Explorer
+ use {
+      'kyazdani42/nvim-tree.lua',
+      cmd = {'NvimTreeToggle', 'NvimTreeOpen'},
+      config = function()
+        require('nvim-tree').setup {
+          update_focused_file = {enable = true, update_cwd = true}
+        }
+      end
+}
 
-  use {"neovim/nvim-lspconfig",
-    requires = { 'williamboman/nvim-lsp-installer' },
-    --config = [[require('config.nvim-lsp')]]
-  }
-  use "hrsh7th/cmp-nvim-lsp"
-  use "hrsh7th/cmp-buffer"
-  use "hrsh7th/cmp-path"
-  use "hrsh7th/cmp-cmdline"
-  use "hrsh7th/nvim-cmp"
-  use "L3MON4D3/Luasnip"
-  use "nvim-treesitter/nvim-treesitter"
-  use "terrortylor/nvim-comment"
+-- Git integration for buffers
+ use {
+			'lewis6991/gitsigns.nvim',
+			event = { "CursorMoved", "CursorMovedI" },
+			config = function()
+				require("gitsigns")
+			end
+}
 
-  use "goolord/alpha-nvim"
-  use {
-    'kyazdani42/nvim-tree.lua',
-    cmd = {'NvimTreeToggle', 'NvimTreeOpen'},
-    config = function()
-    require('nvim-tree').setup {
-      update_focused_file = {enable = true, update_cwd = true}
-    }
-    end
-  }
-  use "nvim-lualine/lualine.nvim"
-  use "norcalli/nvim-colorizer.lua"
+ use "wbthomason/packer.nvim"             -- A use-package inspired plugin manager for Neovim
+ use "kyazdani42/nvim-web-devicons"       -- Lua fork of vim-web-devicons for neovim
+ use "nvim-treesitter/nvim-treesitter"    -- Treesitter Syntax highlighting and abstraction layer
+ use "nvim-lualine/lualine.nvim"          -- Fast and easy statusline for neovim
+ use "shaunsingh/nord.nvim"               -- Neovim theme based off of the Nord Color Palette
+ use "goolord/alpha-nvim"                 -- lua powered greeter like vim-startify / dashboard-nvim
+ use "akinsho/nvim-toggleterm.lua"        -- Plugin to easily toggle a terminal
+ use "terrortylor/nvim-comment"           -- Comment toggler for Neovim written in Lua
+ use "norcalli/nvim-colorizer.lua"        -- Colors highlighter for neovim
+ use "hrsh7th/nvim-cmp"                   -- completion plugin for neovim coded in Lua
+ use "hrsh7th/cmp-buffer"                 -- Nvim-cmp source for buffer words
+ use "hrsh7th/cmp-path"                   -- nvim-cmp source for path
+ use "L3MON4D3/LuaSnip"                   -- Snippet Engine for Neovim written in Lua
+ use "lewis6991/impatient.nvim"           -- Speed up loading Lua modules to improve startup time
+ use "karb94/neoscroll.nvim"              -- Smooth scrolling plugin written in lua
 
-  use "karb94/neoscroll.nvim"
-  use "lukas-reineke/indent-blankline.nvim"
-  
-
+-- Automatically set up your configuration after cloning packer.nvim
+-- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then
     require("packer").sync()
   end
