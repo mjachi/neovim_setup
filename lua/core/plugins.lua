@@ -90,9 +90,6 @@ return packer.startup(function(use)
 
   use "JuliaEditorSupport/julia-vim"
 
-  use "github/copilot.vim"
-  require("copilot").setup({ ft_disable = { "markdown", "latex", "json" }})
-
   if PACKER_BOOTSTRAP then
     require("packer").sync()
   end
