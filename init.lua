@@ -19,10 +19,16 @@ local core_modules = {
 ---- Other Utilities --------------------------------
  "utils/vstuff",
 }
--- Using pcall we can handle better any loading issues
+
+
 for _, module in ipairs(core_modules) do
     local ok, err = pcall(require, module)
     if not ok then
       return
     end
 end
+
+require("nvim-lsp-installer").setup { automatic_installation = true }
+
+
+
