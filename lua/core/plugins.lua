@@ -62,8 +62,16 @@ return packer.startup(function(use)
 		end
   }
 
-  use "neovim/nvim-lspconfig"
-  use "williamboman/nvim-lsp-installer"
+  use {
+    "williamboman/nvim-lsp-installer",
+    {
+      "neovim/nvim-lspconfig",
+      config = function()
+        require("nvim-lsp-installer").setup {}
+        local lspconfig = require("lspconfig")
+        end
+    }
+  }
   use "saadparwaiz1/cmp_luasnip"
   use "hrsh7th/nvim-cmp"
   use "hrsh7th/cmp-buffer"

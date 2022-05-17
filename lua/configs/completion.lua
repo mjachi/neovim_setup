@@ -68,7 +68,7 @@ cmp.setup({
     ['<C-f>'] = cmp.mapping.scroll_docs(4),
     ['<C-Space>'] = cmp.mapping.complete(),
     ['<C-e>'] = cmp.mapping.abort(),
-    ['<CR>'] = cmp.mapping.confirm({ select = true }),
+    ['<Tab>'] = cmp.mapping.confirm({ select = true }),
   }),
   sources = cmp.config.sources({
     { name = 'nvim_lsp' },
@@ -107,11 +107,21 @@ cmp.setup.cmdline(':', {
 
 -- Setup lspconfig.
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
-local servers = {"texlab", "clangd"}
-
--- lspc['texlab'].setup {
---   capabilities = capabilities
--- }
+local servers = { "asm_lsp",
+  "ocamllsp", 
+  "texlab", 
+  "rust_analyzer", 
+  "clangd", 
+  "pyright", 
+  "julials", 
+  "solang", 
+  "solc", 
+  "cmake", 
+  "zk", 
+  "hls" 
+}
+-- local servers = require("nvim-lsp-installer.servers").get_installed_servers() -- TODO this returns []?
+-- local servers = vim.cmd("LspPrintInstalled")
 
 for _, lsp in pairs(servers) do
   lspc[lsp].setup {
