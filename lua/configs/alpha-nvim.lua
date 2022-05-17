@@ -35,6 +35,6 @@ dashboard.section.buttons.val = {
 }
 
 dashboard.section.footer.val = {
-  "Write Programs That Do One Thing And Do It Well.",
+  ":thethe:",
 }
 alpha.setup(dashboard.opts)

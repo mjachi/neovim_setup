@@ -1,10 +1,3 @@
-
---[[-------------------------------------]]--
---      utils config - other settings      --
---              Author: Elai               --
---             License: GPLv3              --
---[[-------------------------------------]]--
-
 -- Automatically deletes all trailing whitespace and newlines at end of file on save. & reset cursor position
 vim.api.nvim_exec([[
 autocmd BufWritePre * let currPos = getpos(".")
@@ -55,9 +48,6 @@ cnoreabbrev W w
 cnoreabbrev Q q
 cnoreabbrev Qall qall
 ]])
-
--- Vertically center document when entering insert mode
-vim.api.nvim_exec([[ autocmd InsertEnter * norm zz ]], false)
 
 -- Disable Auto Commenting
 vim.cmd [[au BufEnter * set fo-=c fo-=r fo-=o]]

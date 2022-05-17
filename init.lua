@@ -14,7 +14,7 @@ local core_modules = {
  "configs/commentary",
  "configs/statusline",
  "configs/colorizer",
- "configs/smooth-scrl",
+ --"configs/smooth-scrl",
  "configs/toggleterm",
 ---- Other Utilities --------------------------------
  "utils/vstuff",
