@@ -1,16 +1,20 @@
-
---[[----------------------------------]]--
---          Lualine - statusline        --
---             Author: Elai             --
---            License: GPLv3            --
---[[----------------------------------]]--
-
--- Eviline / Vimline config for lualine
--- Author: shadmansaleh
--- Author: Elai
--- Credit: glepnir
-
 local lualine = require('lualine')
+
+-- Color table for highlights
+-- stylua: ignore
+local colors = {
+  bg       = '#2e3440',
+  fg       = '#eceff4',
+  yellow   = '#ebcb8b',
+  cyan     = '#88c0d0',
+  darkblue = '#5e81ac',
+  green    = '#a3be8c',
+  orange   = '#d08770',
+  violet   = '#b48ead',
+  magenta  = '#b48ead',
+  blue     = '#81a1c1',
+  red      = '#bf616a',
+}
 
 local conditions = {
   buffer_not_empty = function()
@@ -32,7 +36,13 @@ local config = {
     -- Disable sections and component separators
     component_separators = '',
     section_separators = '',
-    theme = "nord"
+    theme = {
+      -- We are going to use lualine_c an lualine_x as left and
+      -- right section. Both are highlighted by c theme .  So we
+      -- are just setting default looks o statusline
+      normal = { c = { fg = colors.fg, bg = colors.bg } },
+      inactive = { c = { fg = colors.fg, bg = colors.bg } },
+    },
   },
 
 -- These are to remove the defaults
@@ -88,13 +98,13 @@ ins_left {
       n = colors.green,
       i = colors.blue,
       v = colors.magenta,
-      [''] = colors.blue,
+      [''] = colors.blue,
       V = colors.blue,
       c = colors.red,
       no = colors.red,
       s = colors.orange,
       S = colors.orange,
-      [''] = colors.orange,
+      [''] = colors.orange,
       ic = colors.yellow,
       R = colors.violet,
       Rv = colors.violet,
@@ -114,9 +124,12 @@ ins_left {
 -- File Name
 ins_left {
   'filename',
-   file_status = true,
-   path = 2,
-shorting_target = 0,
+   file_status = true,                             -- Displays file status (readonly status, modified status)
+   path = 2,                                       -- 0: Just the filename
+                                                   -- 1: Relative path
+                                                   -- 2: Absolute path
+shorting_target = 0,                               -- Shortens path to leave 40 spaces in the window
+                                                   -- for other components. (terrible name, any suggestions?)
 symbols = {
   modified = '  ',                                -- Text to show when the file is modified.
   readonly = ' ',                                 -- Text to show when the file is non-modifiable or readonly.
@@ -218,3 +231,4 @@ lualine.setup(config)
 
 -- Option to set one the status line on all buffers
 vim.opt.laststatus = 3
+

@@ -1,10 +1,3 @@
-
---[[---------------------------------------]]--
---       toggleterm - terminal on nvim       --
---               Author: Elai                --
---              License: GPLv3               --
---[[---------------------------------------]]--
-
 local status_ok, toggleterm = pcall(require, "toggleterm")
 if not status_ok then
 	return
