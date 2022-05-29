@@ -55,8 +55,8 @@ keymap ("n", "<F1>", ":vnew term://zsh<CR>", {})
 keymap ("i", "<Esc>", "<Esc>`^", {})
 
 vim.cmd([[
-nnoremap n nzzzv
-nnoremap N Nzzzv
+nnoremap N nzzzv
+nnoremap n Nzzzv
 ]])
 
 -----------------
@@ -69,4 +69,15 @@ inoremap <C-A-J> <Esc>:m .+1<CR>==gi
 inoremap <C-A-K> <Esc>:m .-2<CR>==gi
 vnoremap <C-A-J> :m '>+1<CR>gv=gv
 vnoremap <C-A-K> :m '<-2<CR>gv=gv
+]])
+
+--------------------------------
+-- Search, Find (and Replace) --
+--------------------------------
+  -- In order, do away with highlighting with ctrl c
+  -- Select current word
+  -- Find and replace with <X>
+vim.cmd([[
+nnoremap <C-c> :noh<CR>
+nnoremap <C-s> *
 ]])

@@ -16,6 +16,8 @@ set.autochdir = true
 set.incsearch = true
 set.shell = "/bin/zsh"
 set.shortmess:append "sI"
+set.inccommand = "nosplit"
+set.hlsearch = true
 vim.cmd [[set nobackup]]
 vim.cmd [[set nowritebackup]]
 vim.cmd [[set formatoptions-=cro]]

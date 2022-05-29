@@ -14,7 +14,6 @@ local core_modules = {
  "configs/commentary",
  "configs/statusline",
  "configs/colorizer",
- --"configs/smooth-scrl",
  "configs/toggleterm",
 ---- Other Utilities --------------------------------
  "utils/vstuff",
@@ -29,6 +28,3 @@ for _, module in ipairs(core_modules) do
 end
 
 require("nvim-lsp-installer").setup { automatic_installation = true }
-
-
-
