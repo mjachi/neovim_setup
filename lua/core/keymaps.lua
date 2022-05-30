@@ -70,14 +70,3 @@ inoremap <C-A-K> <Esc>:m .-2<CR>==gi
 vnoremap <C-A-J> :m '>+1<CR>gv=gv
 vnoremap <C-A-K> :m '<-2<CR>gv=gv
 ]])
-
---------------------------------
--- Search, Find (and Replace) --
---------------------------------
-  -- In order, do away with highlighting with ctrl c
-  -- Select current word
-  -- Find and replace with <X>
-vim.cmd([[
-nnoremap <C-c> :noh<CR>
-nnoremap <C-s> *
-]])

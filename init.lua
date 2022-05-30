@@ -15,6 +15,7 @@ local core_modules = {
  "configs/statusline",
  "configs/colorizer",
  "configs/toggleterm",
+ "configs/search-and-find",
 ---- Other Utilities --------------------------------
  "utils/vstuff",
 }
