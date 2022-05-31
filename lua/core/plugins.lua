@@ -89,7 +89,7 @@ return packer.startup(function(use)
   use "goolord/alpha-nvim"
   use "karb94/neoscroll.nvim"
 
-  use "JuliaEditorSupport/julia-vim"
+  -- use "JuliaEditorSupport/julia-vim"
 
   if PACKER_BOOTSTRAP then
     require("packer").sync()
