@@ -132,4 +132,4 @@ diagnostics = {
 
 }
 
--- require"nvim-tree".toggle(true, true)
+require"nvim-tree".toggle(true, true)

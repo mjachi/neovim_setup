@@ -89,25 +89,6 @@ return packer.startup(function(use)
   use "goolord/alpha-nvim"
   use "karb94/neoscroll.nvim"
 
-  use {
-    "zbirenbaum/copilot.lua",
-    event = {"VimEnter"},
-    config = function()
-      vim.defer_fn( function()
-        local opts = {
-          plugin_manager_path = vim.fn.stdpath("data") .. "/site/pack/packer",
-          server_opts_override = {},
-          ft_disable = {"markdown", "tex", "json"} -- Disable filetypes for copilot
-        }
-        require("copilot").setup(opts)
-      end, 100)
-    end,
-  }
-  use {
-    "zbirenbaum/copilot-cmp",
-    after = { "copilot.lua", "nvim-cmp"}
-  }
-
   if PACKER_BOOTSTRAP then
     require("packer").sync()
   end
