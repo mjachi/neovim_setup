@@ -48,10 +48,6 @@ return packer.startup(function(use)
 
   use {
     'kyazdani42/nvim-tree.lua',
-    cmd = {'NvimTreeToggle', 'NvimTreeOpen'},
-    config = function()
-      require('nvim-tree').setup { update_focused_file = {enable = true, update_cwd = true} }
-    end
   }
 
   use {

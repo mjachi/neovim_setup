@@ -24,8 +24,6 @@ local core_modules = {
 for _, module in ipairs(core_modules) do
     local ok, err = pcall(require, module)
     if not ok then
-      return
+      return err
     end
 end
-
-require("nvim-lsp-installer").setup { automatic_installation = true }
