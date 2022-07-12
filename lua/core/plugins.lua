@@ -42,9 +42,10 @@ return packer.startup(function(use)
   use "lewis6991/impatient.nvim"
   use "norcalli/nvim-colorizer.lua"
 
-  use "shaunsingh/nord.nvim"
+  -- use "shaunsingh/nord.nvim"
   -- https://github.com/sainnhe/everforest
   -- also morhetz/gruvbox
+  use "folke/tokyonight.nvim"
 
   use {
     'kyazdani42/nvim-tree.lua',
