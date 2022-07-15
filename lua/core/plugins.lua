@@ -45,7 +45,8 @@ return packer.startup(function(use)
   -- use "shaunsingh/nord.nvim"
   -- https://github.com/sainnhe/everforest
   -- also morhetz/gruvbox
-  use "folke/tokyonight.nvim"
+  -- use "folke/tokyonight.nvim"
+  use "catppuccin/nvim"
 
   use {
     'kyazdani42/nvim-tree.lua',

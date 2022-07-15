@@ -19,8 +19,6 @@ local lualine = require('lualine')
 
 
 -- These are the tokyonight colors
-local tknight_colors = require("tokyonight.colors").setup({})
-
 local colors = {
   bg       = '#24283b',
   fg       = '#a9b1d6',
@@ -53,10 +51,11 @@ local config = {
   options = {
     component_separators = '',
     section_separators = '',
-    theme = {
-      normal = { c = { fg = colors.fg, bg = colors.bg } },
-      inactive = { c = { fg = colors.fg, bg = colors.bg } },
-    },
+    theme = "catppuccin"
+    -- {
+    --   normal = { c = { fg = colors.fg, bg = colors.bg } },
+    --   inactive = { c = { fg = colors.fg, bg = colors.bg } },
+    -- },
   },
 
   sections = {
