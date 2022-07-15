@@ -47,10 +47,16 @@ return packer.startup(function(use)
   -- also morhetz/gruvbox
   -- use "folke/tokyonight.nvim"
   use "catppuccin/nvim"
+  use "karb94/neoscroll.nvim"
+  use "akinsho/bufferline.nvim"
+  use "stevearc/aerial.nvim"
+  use "sbdchd/neoformat"
 
-  use {
-    'kyazdani42/nvim-tree.lua',
-  }
+  -- pairs
+  use "jiangmiao/auto-pairs"
+  use "tpope/vim-unimpaired"
+
+  use 'kyazdani42/nvim-tree.lua'
 
   use {
 		'lewis6991/gitsigns.nvim',
@@ -77,6 +83,12 @@ return packer.startup(function(use)
   use "hrsh7th/cmp-cmdline"
   use "hrsh7th/cmp-nvim-lsp"
   use "L3MON4D3/LuaSnip"
+  use "ray-x/lsp_signature.nvim"
+  use "folke/trouble.nvim"
+  use "onsails/lspkind-nvim"
+  use "nvim-lua/lsp-status.nvim"
+  use "tami5/lspsaga.nvim"
+  use "windwp/nvim-autopairs"
 
   use "nvim-treesitter/nvim-treesitter"
   use "akinsho/nvim-toggleterm.lua"
@@ -85,7 +97,6 @@ return packer.startup(function(use)
 
   use "nvim-lualine/lualine.nvim"
   use "goolord/alpha-nvim"
-  use "karb94/neoscroll.nvim"
 
   if PACKER_BOOTSTRAP then
     require("packer").sync()

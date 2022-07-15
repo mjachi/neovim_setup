@@ -1,37 +1,5 @@
 local lualine = require('lualine')
 
--- These are nord colors
--- local colors = {
---   bg       = '#2e3440',
---   fg       = '#eceff4',
---   yellow   = '#ebcb8b',
---   cyan     = '#88c0d0',
---   darkblue = '#5e81ac',
---   green    = '#a3be8c',
---   orange   = '#d08770',
---   violet   = '#b48ead',
---   magenta  = '#b48ead',
---   blue     = '#81a1c1',
---   red      = '#bf616a',
--- }
-
-
-
-
--- These are the tokyonight colors
-local colors = {
-  bg       = '#24283b',
-  fg       = '#a9b1d6',
-  yellow   = '#e0af68',
-  cyan     = '#2ac3de',
-  darkblue = '#565f89',
-  green    = '#9ece6a',
-  orange   = '#ff9e64',
-  violet   = '#bb9af7',
-  magenta  = '#f7768e',
-  blue     = '#7aa2f7',
-  red      = '#f7768e',
-}
 
 local conditions = {
   buffer_not_empty = function()

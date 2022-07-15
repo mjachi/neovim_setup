@@ -6,6 +6,7 @@ local core_modules = {
 ---- Plugin Configurations --------------------------
  "configs/impatient",
  "configs/colorscheme",
+ "configs/aerial",
  "configs/treesitter",
  "configs/completion",
  "configs/alpha-nvim",
