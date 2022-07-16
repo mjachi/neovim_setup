@@ -1,7 +1,6 @@
 require('aerial').setup({})
 local v = vim.api
 
-
 require("lspconfig").vimls.setup{
   on_attach = function(bufnr)
     -- Toggle the aerial window with <leader>a

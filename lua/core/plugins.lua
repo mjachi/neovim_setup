@@ -36,28 +36,25 @@ packer.init {
 
 return packer.startup(function(use)
 
+  -- core
   use "wbthomason/packer.nvim"
   use "wakatime/vim-wakatime"
-  use "kyazdani42/nvim-web-devicons"
   use "lewis6991/impatient.nvim"
+
+  -- purely visual, icons
   use "norcalli/nvim-colorizer.lua"
-
-  -- use "shaunsingh/nord.nvim"
-  -- https://github.com/sainnhe/everforest
-  -- also morhetz/gruvbox
-  -- use "folke/tokyonight.nvim"
+  use "kyazdani42/nvim-web-devicons"
+  -- color schemes
+  -- "shaunsingh/nord.nvim"; "sainnhe/everforest"
+  -- "morhetz/gruvbox"; "folke/tokyonight.nvim"
   use "catppuccin/nvim"
-  use "karb94/neoscroll.nvim"
-  use "akinsho/bufferline.nvim"
-  use "stevearc/aerial.nvim"
-  use "sbdchd/neoformat"
+  use "nvim-treesitter/nvim-treesitter"
+  use "lukas-reineke/indent-blankline.nvim"
 
-  -- pairs
-  use "jiangmiao/auto-pairs"
-  use "tpope/vim-unimpaired"
-
+  -- file tree
   use 'kyazdani42/nvim-tree.lua'
 
+  -- git things
   use {
 		'lewis6991/gitsigns.nvim',
 		event = { "CursorMoved", "CursorMovedI" },
@@ -66,14 +63,12 @@ return packer.startup(function(use)
 		end
   }
 
+  -- LSP things/ completion
   use {
     "williamboman/nvim-lsp-installer",
     {
       "neovim/nvim-lspconfig",
-      config = function()
-        require("nvim-lsp-installer").setup {}
-        local lspconfig = require("lspconfig")
-        end
+      require("nvim-lsp-installer").setup {}
     }
   }
   use "saadparwaiz1/cmp_luasnip"
@@ -83,19 +78,24 @@ return packer.startup(function(use)
   use "hrsh7th/cmp-cmdline"
   use "hrsh7th/cmp-nvim-lsp"
   use "L3MON4D3/LuaSnip"
-  use "ray-x/lsp_signature.nvim"
-  use "folke/trouble.nvim"
-  use "onsails/lspkind-nvim"
-  use "nvim-lua/lsp-status.nvim"
-  use "tami5/lspsaga.nvim"
-  use "windwp/nvim-autopairs"
 
-  use "nvim-treesitter/nvim-treesitter"
-  use "akinsho/nvim-toggleterm.lua"
+  use "karb94/neoscroll.nvim"
+  use "akinsho/bufferline.nvim"
+  use "stevearc/aerial.nvim"
+
+  -- pairs
+  use {
+    "windwp/nvim-autopairs",
+    config = function() require("nvim-autopairs").setup {} end
+  }
+  -- Functionalities
+  --   comments
   use "terrortylor/nvim-comment"
-  use "lukas-reineke/indent-blankline.nvim"
-
-  use "nvim-lualine/lualine.nvim"
+  --   terminal
+  use "akinsho/nvim-toggleterm.lua"
+  --   incline for status line...
+  use "b0o/incline.nvim"
+  --   dashboard
   use "goolord/alpha-nvim"
 
   if PACKER_BOOTSTRAP then

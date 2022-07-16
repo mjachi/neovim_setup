@@ -1,3 +1,6 @@
+-- Author: Matthew Meeker
+
+
 local status_ok, alpha = pcall(require, "alpha")
 if not status_ok then
 	return
@@ -7,8 +10,20 @@ local dashboard = require("alpha.themes.dashboard")
 vim.opt.fillchars:append { eob = " " }
 vim.cmd [[ au User AlphaReady if winnr('$') == 1 | set laststatus=1 ]]
 
+local cats = {
+  [[                      /^--^\     /^--^\     /^--^\                       ]],
+  [[                      \____/     \____/     \____/                       ]],
+  [[                     /      \   /      \   /      \                      ]],
+  [[                    |        | |        | |        |                     ]],
+  [[                     \__  __/   \__  __/   \__  __/                      ]],
+  [[|^|^|^|^|^|^|^|^|^|^|^|^\ \^|^|^|^/ /^|^|^|^|^\ \^|^|^|^|^|^|^|^|^|^|^|^|]],
+  [[| | | | | | | | | | | | |\ \| | |/ /| | | | | | \ \ | | | | | | | | | | |]],
+  [[########################/ /######\ \###########/ /#######################]],
+  [[| | | | | | | | | | | | \/| | | | \/| | | | | |\/ | | | | | | | | | | | |]],
+  [[|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|]],
+}
 
-dashboard.section.header.val = {
+local enMorkVitLogn = {
   [[    ______                   _   _      __            _ __     ___   _           ]],
   [[   / ____/___     ____ ___  (_)_(_)____/ /__   _   __(_) /_   / (_)_(_)___ _____ ]],
   [[  / __/ / __ \   / __ `__ \/ __ \/ ___/ //_/  | | / / / __/  / / __ \/ __ `/ __ \]],
@@ -16,6 +31,10 @@ dashboard.section.header.val = {
   [[/_____/_/ /_/  /_/ /_/ /_/\____/_/  /_/|_|    |___/_/\__/  /_/\____/\__, /_/ /_/ ]],
   [[                                                                   /____/        ]],
 }
+
+
+dashboard.section.header.val = cats
+
 dashboard.config.layout = {
   { type = "padding", val = 5 },
   dashboard.section.header,

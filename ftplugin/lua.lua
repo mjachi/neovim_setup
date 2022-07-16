@@ -1,9 +1,5 @@
+-- Author: Matthew Meeker
 
---[[--------------------------------------]]--
---      lua.lua - Init file of LuaVim       --
---               Author: Elai               --
---              License: GPLv3              --
---[[--------------------------------------]]--
 
 -- In Order For Gf To Work
 vim.opt_local.suffixesadd:prepend('.lua')

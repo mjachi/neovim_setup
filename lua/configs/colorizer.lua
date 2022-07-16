@@ -1,3 +1,6 @@
+-- Author: Matthew Meeker
+
+
 require'colorizer'.setup(
   {'*';},
   {

@@ -19,9 +19,6 @@ keymap ("n", "<A-j>", ":resize +5<cr>", {})
 keymap ("n", "<A-k>", ":resize -5<cr>", {})
 keymap ("n", "<A-l>", ":vertical resize +5<cr>", {})
 
-keymap ("n", "<A-k>", "<C-u>k", {})
-keymap ("n", "<A-j>", "<C-d>j", {})
-
 keymap ("n", "<TAB>", ":bnext<CR>", {})
 keymap ("n", "<S-TAB>", ":bprevious<CR>", {})
 
@@ -41,13 +38,12 @@ keymap ("n", "q", "<nop>", {})
 
 keymap ("n", "<leader>h", ":Gitsigns preview_hunk<CR>", {})
 keymap ("n", "<leader>r", ":Gitsigns reset_buffer<CR>", {})
-keymap ("n", "<leader>a", ":set laststatus=3<CR> | :Alpha<CR>", {})
-keymap ("n", "<F2>", ":NvimTreeToggle<CR>", {})
 keymap ("n", "yie", ":<C-u>%y<CR>", {})
-keymap ("n", "<leader>u", ":PackerUpdate<CR>", {})
-keymap ("n", "<leader>s", ":PackerSync<CR>", {})
-keymap ("n", "<leader>i", ":PackerInstall<CR>", {})
-keymap ("n", "<F1>", ":vnew term://zsh<CR>", {})
+
+keymap ("n", "<F1>", ":ToggleTermToggleAll<CR>", {})
+keymap ("n", "<F2>", ":NvimTreeToggle<CR>", {})
+keymap ("n", "<F3>", ":vnew term://zsh<CR>", {})
+
 
 -----------------
 -- Insert Mode --
@@ -55,8 +51,8 @@ keymap ("n", "<F1>", ":vnew term://zsh<CR>", {})
 keymap ("i", "<Esc>", "<Esc>`^", {})
 
 vim.cmd([[
-nnoremap N nzzzv
-nnoremap n Nzzzv
+nnoremap n nzzzv
+nnoremap N Nzzzv
 ]])
 
 -----------------

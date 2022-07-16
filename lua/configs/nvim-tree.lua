@@ -1,3 +1,6 @@
+-- Author: Matthew Meeker
+
+
 local status_ok, nvim_tree = pcall(require, "nvim-tree")
 if not status_ok then
   return
@@ -32,7 +35,7 @@ nvim_tree.setup {
   -- auto_close = true,
   -- open_on_tab = false,
   -- hijack_cursor = false,
-  update_cwd = true,
+  update_cwd = false,
   -- --   error
   -- --   info
   -- --   question
@@ -114,14 +117,14 @@ nvim_tree.setup {
     side = "left",
     -- auto_resize = true,
     mappings = {
-      custom_only = false,
-      list = {
-        { key = { "l", "<CR>", "o" }, cb = tree_cb "edit" },
-        { key = "h", cb = tree_cb "close_node" },
-        { key = "v", cb = tree_cb "vsplit" },
-        { key = "H", cb = tree_cb "split" },
-        { key = "o", cb = tree_cb "vsplit" },
-      },
+      custom_only = true,
+      -- list = {
+      --   { key = { "l", "<CR>", "o" }, cb = tree_cb "edit" },
+      --   { key = "h", cb = tree_cb "close_node" },
+      --   { key = "v", cb = tree_cb "vsplit" },
+      --   { key = "H", cb = tree_cb "split" },
+      --   { key = "o", cb = tree_cb "vsplit" },
+      -- },
     },
     number = false,
     relativenumber = false,
