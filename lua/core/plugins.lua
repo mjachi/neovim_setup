@@ -78,6 +78,9 @@ return packer.startup(function(use)
   use "hrsh7th/cmp-cmdline"
   use "hrsh7th/cmp-nvim-lsp"
   use "L3MON4D3/LuaSnip"
+  use "folke/trouble.nvim"
+
+  -- END OF LSP THINGS SO SO MANY
 
   use "karb94/neoscroll.nvim"
   use "akinsho/bufferline.nvim"

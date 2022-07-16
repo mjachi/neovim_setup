@@ -1,17 +1,19 @@
 -- Author: Matthew Meeker
 
 local core_modules = {
----- Core Settings ----------------------------------
+---- Core Settings
  "core/plugins",
  "core/keymaps",
  "core/options",
----- Plugin Configurations --------------------------
+---- Plugin Configurations
  "configs/impatient",
  "configs/alpha-nvim",
  "configs/nvim-tree",
  "configs/treesitter",
- "configs/completion",
- "configs/aerial",
+
+"configs/LSP_configs/completion",
+"configs/LSP_configs/aerial",
+"configs/LSP_configs/trouble",
 
  -- visual
  "configs/colorscheme",
@@ -23,7 +25,7 @@ local core_modules = {
  "configs/smooth-scrl",
  "configs/bufferline",
  "configs/toggleterm",
----- Other Utilities --------------------------------
+---- Other Utilities
  "utils/vstuff",
 }
 

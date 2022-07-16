@@ -40,10 +40,14 @@ keymap ("n", "<leader>h", ":Gitsigns preview_hunk<CR>", {})
 keymap ("n", "<leader>r", ":Gitsigns reset_buffer<CR>", {})
 keymap ("n", "yie", ":<C-u>%y<CR>", {})
 
+-- Extra functionalities
 keymap ("n", "<F1>", ":ToggleTermToggleAll<CR>", {})
 keymap ("n", "<F2>", ":NvimTreeToggle<CR>", {})
 keymap ("n", "<F3>", ":vnew term://zsh<CR>", {})
 
+-- LSP things
+-- -- Trouble.nvim
+keymap ("n", "<leader>t", ":Trouble workspace_diagonistics<CR>", {})
 
 -----------------
 -- Insert Mode --
