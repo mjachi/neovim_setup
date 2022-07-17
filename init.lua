@@ -1,32 +1,33 @@
 -- Author: Matthew Meeker
 
 local core_modules = {
----- Core Settings
- "core/plugins",
- "core/keymaps",
- "core/options",
----- Plugin Configurations
- "configs/impatient",
- "configs/alpha-nvim",
- "configs/nvim-tree",
- "configs/treesitter",
+  -- Core Settings
+  "core/plugins",
+  "core/keymaps",
+  "core/options",
+  -- visual
+  "configs/colorscheme",
+  "configs/colorizer",
+  -- Plugin Configurations
+  "configs/impatient",
+  "configs/alpha-nvim",
+  "configs/nvim-tree",
+  "configs/treesitter",
 
-"configs/LSP_configs/completion",
-"configs/LSP_configs/aerial",
-"configs/LSP_configs/trouble",
+  "configs/LSP_configs/completion",
+  "configs/LSP_configs/aerial",
+  "configs/LSP_configs/trouble",
 
- -- visual
- "configs/colorscheme",
- "configs/colorizer",
+  -- functionalities
+  "configs/gitsigns",
+  "configs/commentary",
+  "configs/smooth-scrl",
+  "configs/bufferline",
+  "configs/toggleterm",
+  "configs/incline",
 
- -- functionalities
- "configs/gitsigns",
- "configs/commentary",
- "configs/smooth-scrl",
- "configs/bufferline",
- "configs/toggleterm",
----- Other Utilities
- "utils/vstuff",
+  ---- Other Utilities
+  "utils/vstuff",
 }
 
 for _, module in ipairs(core_modules) do

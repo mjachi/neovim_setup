@@ -41,7 +41,7 @@ keymap ("n", "<leader>r", ":Gitsigns reset_buffer<CR>", {})
 keymap ("n", "yie", ":<C-u>%y<CR>", {})
 
 -- Extra functionalities
-keymap ("n", "<F1>", ":ToggleTermToggleAll<CR>", {})
+keymap ("n", "<F1>", ":ToggleTerm<CR>", {})
 keymap ("n", "<F2>", ":NvimTreeToggle<CR>", {})
 keymap ("n", "<F3>", ":vnew term://zsh<CR>", {})
 
@@ -55,18 +55,18 @@ keymap ("n", "<leader>t", ":Trouble workspace_diagnostics<CR>", {})
 keymap ("i", "<Esc>", "<Esc>`^", {})
 
 vim.cmd([[
-nnoremap n nzzzv
-nnoremap N Nzzzv
+  nnoremap n nzzzv
+  nnoremap N Nzzzv
 ]])
 
 -----------------
 -- Visual Mode --
 -----------------
 vim.cmd([[
-nnoremap <C-A-J> :m .+1<CR>==
-nnoremap <C-A-K> :m .-2<CR>==
-inoremap <C-A-J> <Esc>:m .+1<CR>==gi
-inoremap <C-A-K> <Esc>:m .-2<CR>==gi
-vnoremap <C-A-J> :m '>+1<CR>gv=gv
-vnoremap <C-A-K> :m '<-2<CR>gv=gv
+  nnoremap <C-A-J> :m .+1<CR>==
+  nnoremap <C-A-K> :m .-2<CR>==
+  inoremap <C-A-J> <Esc>:m .+1<CR>==gi
+  inoremap <C-A-K> <Esc>:m .-2<CR>==gi
+  vnoremap <C-A-J> :m '>+1<CR>gv=gv
+  vnoremap <C-A-K> :m '<-2<CR>gv=gv
 ]])
