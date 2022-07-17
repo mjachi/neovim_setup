@@ -48,6 +48,7 @@ catp.setup({
       colored_indent_levels = false,
     },
   },
+  bufferline = true,
 })
 
 

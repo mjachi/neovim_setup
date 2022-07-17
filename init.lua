@@ -1,13 +1,16 @@
 -- Author: Matthew Meeker
 
 local core_modules = {
+
   -- Core Settings
   "core/plugins",
   "core/keymaps",
   "core/options",
+
   -- visual
   "configs/colorscheme",
   "configs/colorizer",
+
   -- Plugin Configurations
   "configs/impatient",
   "configs/alpha-nvim",
@@ -24,10 +27,12 @@ local core_modules = {
   "configs/smooth-scrl",
   "configs/bufferline",
   "configs/toggleterm",
+  "configs/lualine",
   "configs/incline",
 
   ---- Other Utilities
   "utils/vstuff",
+
 }
 
 for _, module in ipairs(core_modules) do
