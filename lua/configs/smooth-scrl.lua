@@ -18,14 +18,11 @@ require('neoscroll').setup({
 local t = {}
 -- Syntax: t[keys] = {function, {function arguments}}
 -- Use the "sine" easing function
-t['<A-w>'] = {'scroll', {'-vim.wo.scroll', 'true', '350', [['sine']]}}
-t['<A-s>'] = {'scroll', { 'vim.wo.scroll', 'true', '350', [['sine']]}}
--- Use the "circular" easing function
-t['<A-b>'] = {'scroll', {'-vim.api.nvim_win_get_height(0)', 'true', '500', [['circular']]}}
-t['<A-f>'] = {'scroll', { 'vim.api.nvim_win_get_height(0)', 'true', '500', [['circular']]}}
+t['<A-e>'] = {'scroll', {'-vim.wo.scroll', 'true', '350', [['sine']]}}
+t['<A-d>'] = {'scroll', { 'vim.wo.scroll', 'true', '350', [['sine']]}}
 -- Pass "nil" to disable the easing animation (constant scrolling speed)
-t['<A-y>'] = {'scroll', {'-0.10', 'false', '100', nil}}
-t['<A-e>'] = {'scroll', { '0.10', 'false', '100', nil}}
+t['<A-r>'] = {'scroll', {'-0.10', 'false', '100', nil}}
+t['<A-f>'] = {'scroll', { '0.10', 'false', '100', nil}}
 -- When no easing function is provided the default easing function (in this case "quadratic") will be used
 t['zt']    = {'zt', {'300'}}
 t['zz']    = {'zz', {'300'}}
