@@ -79,6 +79,7 @@ return packer.startup(function(use)
   use "hrsh7th/cmp-nvim-lsp"
   use "L3MON4D3/LuaSnip"
   use "folke/trouble.nvim"
+  use "hrsh7th/cmp-nvim-lsp-signature-help"
 
   -- END OF LSP THINGS SO SO MANY
 

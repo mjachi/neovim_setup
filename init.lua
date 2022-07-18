@@ -25,10 +25,10 @@ local core_modules = {
   "configs/gitsigns",
   "configs/commentary",
   "configs/smooth-scrl",
-  "configs/bufferline",
   "configs/toggleterm",
   "configs/lualine",
   "configs/incline",
+  "configs/bufferline",
 
   ---- Other Utilities
   "utils/vstuff",

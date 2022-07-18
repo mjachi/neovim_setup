@@ -1,6 +1,3 @@
-local cp_colors = require('catppuccin.api.colors').get_colors()
-
-
 return function()
   local fn = vim.fn
 
@@ -101,7 +98,6 @@ return function()
             end,
           },
           {
-            highlight = { guisp = cp_colors.sky, gui = 'underline' },
             name = 'tests',
             icon = '',
             matcher = function(buf)
