@@ -98,6 +98,7 @@ return packer.startup(function(use)
   --   terminal
   use "akinsho/nvim-toggleterm.lua"
   --   incline for status line...
+  use "nvim-lualine/lualine.nvim"
   use "b0o/incline.nvim"
   --   dashboard
   use "goolord/alpha-nvim"
