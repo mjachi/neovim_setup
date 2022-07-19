@@ -1,59 +1,48 @@
 -- Author: Matthew Meeker
 
--- Using catppuccin colorscheme
-local catp = require("catppuccin")
-
-catp.setup({
-  styles = {
-    comments = {"italic"},
-    conditionals = {"italic"},
-    loops = {},
-    functions = {"bold"},
-    keywords = {"bold"},
-    strings = {"italic"},
-    variables = {"italic"},
-    numbers = {},
-    booleans = {},
-    properties = {},
-    types = {},
-    operators = {},
-  },
-  integrations = {
-    treesitter = true,
-    native_lsp = {
-      enabled = true,
-      virtual_text = {
-        errors = {"italic"},
-        hints = {"italic"},
-        warnings = {"italic"},
-        information = {"italic"},
+-- Using nightfox
+-- Default options
+require('nightfox').setup({
+  options = {
+    -- Compiled file's destination location
+    compile_path = vim.fn.stdpath("cache") .. "/nightfox",
+    compile_file_suffix = "_compiled", -- Compiled file suffix
+    transparent = false,    -- Disable setting background
+    terminal_colors = true, -- Set terminal colors (vim.g.terminal_color_*) used in `:terminal`
+    dim_inactive = false,   -- Non focused panes set to alternative background
+    styles = {              -- Style to be applied to different syntax groups
+      comments = "italic",    -- Value is any valid attr-list value `:help attr-list`
+      conditionals = "NONE",
+      constants = "NONE",
+      functions = "bold",
+      keywords = "bold",
+      numbers = "NONE",
+      operators = "NONE",
+      strings = "NONE",
+      types = "NONE",
+      variables = "italic",
+    },
+    inverse = {             -- Inverse highlight for different types
+      match_paren = false,
+      visual = false,
+      search = false,
+    },
+    modules = {             -- List of various plugins and additional options
+      aerial = true,
+      cmp = true,
+      lsp_saga = true,
+      lsp_trouble = true,
+      nvimtree = {
+        enable = true,
+        background = true,
       },
-      underlines = {
-        errors = {"underline"},
-        hints = {"underline"},
-        warnings = {"underline"},
-        information = {"underline"},
-      },
+      gitsigns = true,
+      treesitter = true,
     },
-    lsp_trouble = true,
-    cmp = true,
-    gitsigns = true,
-    nvimtree = {
-      enabled = true,
-      show_root = true,
-      transparent_panel = false,
-    },
-    indent_blankline = {
-      enabled = true,
-      colored_indent_levels = false,
-    },
-    bufferline = true,
-  },
+  }
 })
 
-
-vim.g.catppuccin_flavour = "mocha"
-local status_ok, _ = pcall(vim.cmd, "colorscheme catppuccin")
+local status_ok, _ = pcall(vim.cmd, "colorscheme duskfox")
 if not status_ok then
   return
 end

@@ -1,6 +1,5 @@
 -- Author: Matthew Meeker
 
-
 local status_ok, nvim_tree = pcall(require, "nvim-tree")
 if not status_ok then
   return
@@ -24,7 +23,7 @@ nvim_tree.setup {
   },
   filters = {
     custom = { ".git" },
-    exclude = { ".gitignore" },
+    exclude = { },
   },
   update_cwd = false,
   renderer = {
@@ -34,9 +33,9 @@ nvim_tree.setup {
     highlight_opened_files = "none",
     root_folder_modifier = ":~",
     indent_markers = {
-      enable = false,
+      enable = true,
       icons = {
-        corner = "└ ",
+        corner = "│ ",
         edge = "│ ",
         none = "  ",
       },
@@ -49,15 +48,15 @@ nvim_tree.setup {
       show = {
         file = true,
         folder = true,
-        folder_arrow = true,
+        folder_arrow = false,
         git = true,
       },
       glyphs = {
         default = "",
         symlink = "",
         folder = {
-          arrow_open = " ",
-          arrow_closed = "",
+          arrow_open = "v",
+          arrow_closed = ">",
           default = "",
           open = "",
           empty = "",

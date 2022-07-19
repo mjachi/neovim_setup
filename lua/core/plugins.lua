@@ -47,7 +47,8 @@ return packer.startup(function(use)
   -- color schemes
   -- "shaunsingh/nord.nvim"; "sainnhe/everforest"
   -- "morhetz/gruvbox"; "folke/tokyonight.nvim"
-  use "catppuccin/nvim"
+  -- use "catppuccin/nvim"
+  use "EdenEast/nightfox.nvim"
   use "nvim-treesitter/nvim-treesitter"
   use "lukas-reineke/indent-blankline.nvim"
 
@@ -84,7 +85,7 @@ return packer.startup(function(use)
   -- END OF LSP THINGS SO SO MANY
 
   use "karb94/neoscroll.nvim"
-  use "akinsho/bufferline.nvim"
+  use "nanozuki/tabby.nvim"
   use "stevearc/aerial.nvim"
 
   -- pairs

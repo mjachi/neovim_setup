@@ -28,7 +28,7 @@ local core_modules = {
   "configs/toggleterm",
   "configs/lualine",
   "configs/incline",
-  "configs/bufferline",
+  "configs/tabby",
 
   ---- Other Utilities
   "utils/vstuff",
