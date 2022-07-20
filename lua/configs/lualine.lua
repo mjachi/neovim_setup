@@ -4,6 +4,8 @@ require('lualine').setup {
   options = {
     component_separators = '|',
     section_separators = { left = '', right = '' },
+    disabled_filetypes = { "alpha", "packer", "Trouble", "NvimTree", "toggleterm" },
+    always_divide_middle = true,
   },
   sections = {
     lualine_a = {

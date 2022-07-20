@@ -85,7 +85,6 @@ return packer.startup(function(use)
   -- END OF LSP THINGS SO SO MANY
 
   use "karb94/neoscroll.nvim"
-  use "nanozuki/tabby.nvim"
   use "stevearc/aerial.nvim"
 
   -- pairs
@@ -94,15 +93,16 @@ return packer.startup(function(use)
     config = function() require("nvim-autopairs").setup {} end
   }
   -- Functionalities
-  --   comments
   use "terrortylor/nvim-comment"
-  --   terminal
   use "akinsho/nvim-toggleterm.lua"
-  --   incline for status line...
   use "nvim-lualine/lualine.nvim"
   use "b0o/incline.nvim"
-  --   dashboard
   use "goolord/alpha-nvim"
+  use {
+    'nvim-telescope/telescope.nvim',
+    requires = { {'nvim-lua/plenary.nvim'} }
+  }
+  use 'simrat39/symbols-outline.nvim'
 
   if PACKER_BOOTSTRAP then
     require("packer").sync()

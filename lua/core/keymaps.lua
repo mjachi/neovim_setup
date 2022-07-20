@@ -48,6 +48,7 @@ keymap ("n", "<F3>", ":vnew term://zsh<CR>", {})
 -- LSP things
 -- -- Trouble.nvim
 keymap ("n", "<leader>y", ":Trouble workspace_diagnostics<CR>", {})
+keymap ("n", "<leader>s", ":SymbolsOutline<CR>", {})
 
 -----------------
 -- Insert Mode --
