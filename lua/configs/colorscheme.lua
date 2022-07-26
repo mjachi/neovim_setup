@@ -42,7 +42,7 @@ require('nightfox').setup({
   }
 })
 
-local status_ok, _ = pcall(vim.cmd, "colorscheme nordfox")
+local status_ok, _ = pcall(vim.cmd, "colorscheme nightfox")
 if not status_ok then
   return
 end
