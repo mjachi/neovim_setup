@@ -44,11 +44,16 @@ return packer.startup(function(use)
   -- purely visual, icons
   use "norcalli/nvim-colorizer.lua"
   use "kyazdani42/nvim-web-devicons"
+
   -- color schemes
-  -- "shaunsingh/nord.nvim"; "sainnhe/everforest"
-  -- "morhetz/gruvbox"; "folke/tokyonight.nvim"
-  -- use "catppuccin/nvim"
+  "shaunsingh/nord.nvim"
+  use "catppuccin/nvim"
+  use "morhetz/gruvbox"
+  use "sainnhe/everforest"
   use "EdenEast/nightfox.nvim"
+  use "folke/tokyonight.nvim"
+  use "shaunsingh/oxocarbon.nvim"
+
   use "nvim-treesitter/nvim-treesitter"
   use "lukas-reineke/indent-blankline.nvim"
 
